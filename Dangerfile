@@ -76,7 +76,7 @@ end
 
 # Warn when any of the package manifest(s) updated but not others
 podspec_updated = PackageManifest.new("Moya.podspec", !git.modified_files.grep(/Moya.podspec/).empty?)
-cartfile_updated = PackageManifest.new("Cartfile", !git.modified_files.grep(/Cartfile/).empty?)
+cartfile_updated = PackageManifest.new("Cartfile", !git.modified_files.grep(/Cartfile$/).empty?)
 cartfile_resolved_updated = PackageManifest.new("Cartfile.resolved", !git.modified_files.grep(/Cartfile.resolved/).empty?)
 package_updated = PackageManifest.new("Package.swift", !git.modified_files.grep(/Package.swift/).empty?)
 package_resolved_updated = PackageManifest.new("Package.resolved", !git.modified_files.grep(/Package.resolved/).empty?)
